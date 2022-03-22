@@ -1,10 +1,13 @@
+@import "variables";
 @import "config";
 
-#app {
+body {
   font-family: 'Montserrat', Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #fff;
   font-size: 16px;
   line-height: 1.25em;
+  background: radial-gradient(82.33% 70.44% at 50% 0%, $body-bg-light 0%, $body-bg 100%);
+  min-height: 100vh;
 }
