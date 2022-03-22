@@ -1,0 +1,40 @@
+// Variables
+$text-app: #fff;
+$text-grey: #A3B8CC;
+$text-black: #212529;
+
+$accent: #FF7F22;
+$accent-dark: #FF5722;
+
+$primary: #7CDAF9;
+$primary-dark: #22B3E3;
+
+$btn-disabled-bg: #4C5865;
+$btn-disabled-text: #7D90A6;
+
+$checkbox-bg: #333940;
+$checkbox-icon: #fff;
+$checkbox-disabled-icon: #4C5865;
+$checkbox-border: #A3B8CC;
+$checkbox-border-hover: #4C5865;
+$checkbox-border-active: #A3B8CC;
+$checkbox-border-disabled: #333940;
+
+$body-bg: #212529;
+$body-bg-light: #26394D;
+
+// Bootstrap
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1106px,
+);
+
+$container-max-widths: (
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1046px,
+);
