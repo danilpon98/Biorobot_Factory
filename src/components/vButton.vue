@@ -116,6 +116,7 @@ export default {
     font-weight: 500;
     background: $primary;
     outline-offset: -2px;
+    transition: all 0.2s;
     &::after {
       border: 2px solid transparent;
       background: linear-gradient($body-bg, $body-bg) padding-box,
@@ -128,6 +129,7 @@ export default {
           border-box;
       color: $primary;
       border-radius: 60px;
+      transition: opacity 0s;
     }
     &:hover::after,
     &:disabled::after {
@@ -147,7 +149,10 @@ export default {
       color: $btn-disabled-bg;
       outline: 2px solid $btn-disabled-bg;
       background: transparent;
-      transition: none;
+      transition: background 0s;
+    }
+    &:disabled::after {
+      transition: opacity 0.2s;
     }
   }
 }
