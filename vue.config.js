@@ -26,6 +26,15 @@ const templateFunction = function (data) {
 
 module.exports = defineConfig({
   transpileDependencies: true,
+  css: {
+    loaderOptions: {
+      sass: {
+        additionalData: `
+          @import "@/scss/_variables.scss";
+        `,
+      },
+    },
+  },
   configureWebpack: {
     target: "web",
     plugins: [

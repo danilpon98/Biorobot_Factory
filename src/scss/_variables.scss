@@ -38,3 +38,7 @@ $container-max-widths: (
         lg: 960px,
         xl: 1046px,
 );
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";

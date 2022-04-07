@@ -33,7 +33,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "./src/scss/variables";
 .btn {
   display: inline-flex;
   align-items: center;
