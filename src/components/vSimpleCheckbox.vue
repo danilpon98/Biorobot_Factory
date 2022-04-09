@@ -39,6 +39,7 @@ export default {
   }
   &__label {
     transition: color 0.15s;
+    margin-left: 12px;
   }
   &__input:checked + &__indicator::before {
     opacity: 1;
@@ -58,7 +59,6 @@ export default {
     height: 24px;
     border: 2px solid $checkbox-border;
     flex-shrink: 0;
-    margin-right: 12px;
     position: relative;
     transition: border-color 0.15s;
     &::before {
