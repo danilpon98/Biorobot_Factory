@@ -44,7 +44,7 @@ module.exports = defineConfig({
           glob: "*.png",
         },
         target: {
-          image: resolve("public/img/sprite-robots.png"),
+          image: resolve("src/assets/img/sprite-robots.png"),
           css: [
             [
               resolve("src/scss/modules/sprites/sprite-robots.scss"),
@@ -55,7 +55,7 @@ module.exports = defineConfig({
           ],
         },
         apiOptions: {
-          cssImageRef: "~/public/img/sprite-robots.png",
+          cssImageRef: "~/src/assets/img/sprite-robots.png",
         },
         spritesmithOptions: {
           padding: 0,
