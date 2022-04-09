@@ -17,18 +17,9 @@
 export default {
   name: "vSimpleCheckbox",
   props: {
-    modelValue: {
-      type: Boolean,
-      default: false,
-    },
-    name: {
-      type: String,
-      default: "",
-    },
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
+    modelValue: { type: Boolean, default: false },
+    name: { type: String, default: "" },
+    disabled: { type: Boolean, default: false },
   },
 };
 </script>
