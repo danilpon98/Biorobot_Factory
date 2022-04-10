@@ -24,6 +24,76 @@ const templateFunction = function (data) {
   return shared + "\n" + perSprite;
 };
 
+const configSVGIcon = function (config) {
+  // Exclude SVG sprite directory from default svg rule
+  config.module.rule("svg").exclude.add(resolve("src/assets/svg-icons")).end();
+
+  // Options used by svgo-loader to optimize SVG files
+  // https://github.com/svg/svgo#what-it-can-do
+  const options = {
+    plugins: [
+      { name: "cleanupAttrs" },
+      { name: "cleanupEnableBackground" },
+      { name: "cleanupIDs" },
+      { name: "cleanupListOfValues" },
+      { name: "cleanupNumericValues" },
+      { name: "collapseGroups" },
+      { name: "convertColors" },
+      { name: "convertPathData" },
+      { name: "convertShapeToPath" },
+      { name: "convertStyleToAttrs" },
+      { name: "convertTransform" },
+      { name: "mergePaths" },
+      { name: "removeComments" },
+      { name: "removeDesc" },
+      { name: "removeDimensions" },
+      { name: "removeDoctype" },
+      { name: "removeEditorsNSData" },
+      { name: "removeEmptyAttrs" },
+      { name: "removeEmptyContainers" },
+      { name: "removeEmptyText" },
+      { name: "removeHiddenElems" },
+      { name: "removeMetadata" },
+      { name: "removeNonInheritableGroupAttrs" },
+      { name: "removeRasterImages" },
+      { name: "removeTitle" },
+      { name: "removeUnknownsAndDefaults" },
+      { name: "removeUselessDefs" },
+      { name: "removeUnusedNS" },
+      { name: "removeUselessStrokeAndFill" },
+      {
+        name: "removeAttrs",
+        params: {
+          attrs: ["fill"],
+        },
+      },
+      { name: "removeXMLProcInst" },
+      { name: "removeStyleElement" },
+      { name: "removeUnknownsAndDefaults" },
+      { name: "sortAttrs" },
+    ],
+  };
+
+  // Include only SVG sprite directory for new svg-icon rule
+  // Use svg-sprite-loader to build SVG sprite
+  // Use svgo-loader to optimize SVG files
+  config.module
+    .rule("svg-icon")
+    .test(/\.svg$/)
+    .include.add(resolve("src/assets/svg-icons"))
+    .end()
+    .use("svg-sprite-loader")
+    .loader("svg-sprite-loader")
+    .options({
+      symbolId: "icon-[name]",
+    })
+    .end()
+    .use("svgo-loader")
+    .loader("svgo-loader")
+    .options(options)
+    .end();
+};
+
 module.exports = defineConfig({
   transpileDependencies: true,
   css: {
@@ -65,5 +135,8 @@ module.exports = defineConfig({
         },
       }),
     ],
+  },
+  chainWebpack: (config) => {
+    configSVGIcon(config);
   },
 });
