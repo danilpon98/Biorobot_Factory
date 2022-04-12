@@ -37,7 +37,7 @@ export default {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 20px;
+  padding: 5px 16px;
   text-align: center;
   min-height: 48px;
   text-decoration: none;
