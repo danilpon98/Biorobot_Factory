@@ -21,6 +21,9 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @include media-breakpoint-down(md) {
+    margin-top: 24px;
+  }
   &__btn {
     @media (max-width: 360px) {
       width: 100%;

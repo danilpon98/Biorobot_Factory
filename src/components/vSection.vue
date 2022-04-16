@@ -39,9 +39,19 @@ export default {
 .section {
   position: relative;
   padding-left: 130px;
-  margin-top: 100px;
+  margin-top: 110px;
   @include media-breakpoint-down(xl) {
     padding-left: 0;
+    margin-top: 90px;
+  }
+  @include media-breakpoint-down(lg) {
+    margin-top: 80px;
+  }
+  @include media-breakpoint-down(md) {
+    margin-top: 70px;
+  }
+  @include media-breakpoint-down(sm) {
+    margin-top: 60px;
   }
   &__number,
   &__scroll {
