@@ -1,4 +1,22 @@
 @import "~bootstrap/scss/root";
 @import "~bootstrap/scss/reboot";
 @import "~bootstrap/scss/containers";
+@import "~bootstrap/scss/grid";
+
+@import "~bootstrap/scss/utilities";
+$utilities: map-get-multiple(
+  $utilities,
+    (
+      "align-items",
+      "margin-bottom",
+      "margin-top",
+      "order",
+      "text-align",
+      "overflow"
+    )
+);
+@import "~bootstrap/scss/utilities/api";
+
 @import "./modules/sprites/sprite-robots";
+@import "./modules/typography";
+@import "./modules/img";
