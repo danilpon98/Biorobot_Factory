@@ -2,6 +2,7 @@
   <div class="section">
     <div class="section__number" v-if="numberString">{{ numberString }}</div>
     <div class="section__scroll" v-if="scroll">Скролл</div>
+    <h2 class="section__title" v-if="title">{{ title }}</h2>
     <slot />
   </div>
 </template>
@@ -20,6 +21,10 @@ export default {
     },
     scroll: {
       type: Boolean,
+      required: false,
+    },
+    title: {
+      type: String,
       required: false,
     },
   },
@@ -99,6 +104,12 @@ export default {
       background-color: $text-grey;
       transform: translateY(-50%);
       z-index: 1;
+    }
+  }
+  &__title {
+    margin-bottom: 60px;
+    @include media-breakpoint-down(xl) {
+      margin-bottom: 40px;
     }
   }
 }
