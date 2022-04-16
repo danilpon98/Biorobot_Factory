@@ -1,16 +1,19 @@
 <template>
   <div class="container">
-    <img src="img/logo.png" alt="logo" />
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet
-    aperiam delectus doloribus nam numquam pariatur sed sequi sunt. Consequuntur
-    esse explicabo fuga id ipsam iste odit quibusdam sunt veniam?
+    <app-header />
+    <app-main-section />
   </div>
 </template>
 
 <script>
+import AppHeader from "@/components/AppHeader";
+import AppMainSection from "@/components/AppMainSection";
 export default {
   name: "App",
-  components: {},
+  components: {
+    AppMainSection,
+    AppHeader,
+  },
 };
 </script>
 

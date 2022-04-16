@@ -19,7 +19,7 @@
 <script>
 import VSection from "@/components/vSection";
 export default {
-  name: "AppMainScreen",
+  name: "AppMainSection",
   components: { VSection },
 };
 </script>
