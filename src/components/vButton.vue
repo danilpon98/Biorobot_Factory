@@ -21,7 +21,7 @@ export default {
     type: {
       default: false,
       validator(value) {
-        return ["accent", "primary", "accent-border"].includes(value);
+        return ["accent", "primary", "accent-border", false].includes(value);
       },
     },
     responsive: {
