@@ -31,6 +31,7 @@ export default {
   position: relative;
   cursor: pointer;
   display: inline-flex;
+  align-items: center;
   &:hover &__indicator {
     border-color: $checkbox-border-hover;
   }
