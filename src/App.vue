@@ -3,8 +3,9 @@
     <app-header />
     <app-main-section />
     <app-wallet-section />
-    <app-message />
+    <app-market-section />
   </div>
+  <app-message />
 </template>
 
 <script>
@@ -12,9 +13,11 @@ import AppHeader from "@/components/AppHeader";
 import AppMainSection from "@/components/AppMainSection";
 import AppWalletSection from "@/components/AppWalletSection";
 import AppMessage from "@/components/AppMessage";
+import AppMarketSection from "@/components/AppMarketSection";
 export default {
   name: "App",
   components: {
+    AppMarketSection,
     AppMessage,
     AppWalletSection,
     AppMainSection,

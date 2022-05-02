@@ -1,11 +1,11 @@
-h1,h2,h3,.h1,.h2,.h3 {
+.h1,.h2,.h3 {
   font-weight: 600;
   @include media-breakpoint-down(sm) {
     text-align: center;
   }
 }
 
-h1, .h1 {
+.h1 {
   font-size: 56px;
   line-height: 72px;
   @include media-breakpoint-down(lg) {
@@ -22,8 +22,7 @@ h1, .h1 {
   }
 }
 
-
-h2, .h2 {
+.h2 {
   font-size: 32px;
   line-height: 40px;
   @include media-breakpoint-down(lg) {
@@ -32,7 +31,7 @@ h2, .h2 {
   }
 }
 
-h3, .h3 {
+.h3 {
   font-size: 24px;
   line-height: 32px;
 }
@@ -44,6 +43,7 @@ h3, .h3 {
 .text-info {
   font-size: 20px;
   line-height: 32px;
+  font-weight: 600;
   @include media-breakpoint-down(lg) {
     font-size: 18px;
     line-height: 24px;
@@ -60,4 +60,8 @@ small{
   color: $text-grey;
   font-size: 12px;
   line-height: 16px;
+}
+
+.text-strong {
+  font-weight: 600;
 }

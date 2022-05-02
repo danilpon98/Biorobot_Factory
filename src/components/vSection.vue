@@ -2,7 +2,7 @@
   <div class="section">
     <div class="section__number" v-if="numberString">{{ numberString }}</div>
     <div class="section__scroll" v-if="scroll">Скролл</div>
-    <h2 class="section__title" v-if="title">{{ title }}</h2>
+    <h2 class="section__title h2" v-if="title">{{ title }}</h2>
     <slot />
   </div>
 </template>
