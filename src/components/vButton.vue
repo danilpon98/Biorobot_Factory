@@ -61,6 +61,7 @@ export default {
   &:disabled {
     pointer-events: none;
     cursor: default;
+    user-select: none;
   }
   &_accent::after,
   &_primary::after {
