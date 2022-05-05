@@ -57,6 +57,9 @@ export default {
           (robot) => robot.type === type && robot.gender === gender
         );
       },
+    oneById: (state) => (id) => {
+      return state.robots.find((robot) => robot.id === id);
+    },
     isManufactured: (state) => (id) => state.manufactured.includes(id),
   },
   mutations: {
@@ -65,18 +68,20 @@ export default {
     },
   },
   actions: {
-    make({ getters, commit, dispatch }, id) {
-      if (!getters.isManufactured(id)) {
-        commit("addToManufactured", id);
-        dispatch(
-          "messages/add",
-          {
-            title: "Биоробот произведён",
-            description: "Поздравляем! Вы произвели биоробота",
-          },
-          { root: true }
-        );
-      }
+    make({ getters, commit, dispatch, rootGetters }, id) {
+      if (getters.isManufactured(id)) return;
+      const robot = getters.oneById(id);
+      const coins = rootGetters["coins/all"];
+      commit("addToManufactured", id);
+      commit("coins/setCoins", coins - robot.price, { root: true });
+      dispatch(
+        "messages/add",
+        {
+          title: "Биоробот произведён",
+          description: "Поздравляем! Вы произвели биоробота",
+        },
+        { root: true }
+      );
     },
   },
 };
