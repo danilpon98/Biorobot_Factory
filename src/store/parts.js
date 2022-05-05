@@ -5,20 +5,23 @@ export default {
       {
         id: "bioarm",
         name: "Биорука",
+        plural: "биоруки,биоруки,биорук",
         purchasePrice: 7,
         salePrice: 5,
-        availability: 1,
+        availability: 2,
       },
       {
         id: "microchip",
         name: "Микрочип",
+        plural: "микрочипа,микрочипа,микрочипов",
         purchasePrice: 5,
         salePrice: 3,
-        availability: 1,
+        availability: 3,
       },
       {
         id: "soul",
         name: "Душа",
+        plural: "души,души,душь",
         purchasePrice: 25,
         salePrice: 15,
         availability: 0,
@@ -28,6 +31,12 @@ export default {
   getters: {
     all: (state) => state.parts,
     one: (state) => (id) => state.parts.find((part) => part.id === id),
+    allAssoc: (state) => {
+      return state.parts.reduce((prev, curr) => {
+        prev[curr.id] = { ...curr };
+        return prev;
+      }, {});
+    },
   },
   mutations: {
     update(state, newPart) {
@@ -51,6 +60,11 @@ export default {
       const part = { ...getters.one(id) };
       commit("coins/setCoins", coins + part.salePrice, { root: true });
       part.availability--;
+      commit("update", part);
+    },
+    setAvailability({ commit, getters }, { id, availability }) {
+      const part = { ...getters.one(id) };
+      part.availability = availability;
       commit("update", part);
     },
   },

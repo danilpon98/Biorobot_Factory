@@ -1,10 +1,11 @@
 <template>
-  <div class="container main-wrapper">
+  <div class="container main-wrapper overflow-hidden">
     <app-header />
     <app-main-section />
     <app-wallet-section />
     <app-market-section />
     <app-warehouse-section />
+    <app-production-section />
   </div>
   <app-message />
 </template>
@@ -16,9 +17,11 @@ import AppWalletSection from "@/components/AppWalletSection";
 import AppMessage from "@/components/AppMessage";
 import AppMarketSection from "@/components/AppMarketSection";
 import AppWarehouseSection from "@/components/AppWarehouseSection";
+import AppProductionSection from "@/components/AppProductionSection";
 export default {
   name: "App",
   components: {
+    AppProductionSection,
     AppWarehouseSection,
     AppMarketSection,
     AppMessage,

@@ -14,7 +14,8 @@ $utilities: map-get-multiple(
       "order",
       "text-align",
       "overflow",
-      "display"
+      "display",
+      "order"
     )
 );
 @import "~bootstrap/scss/utilities/api";
