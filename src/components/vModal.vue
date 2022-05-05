@@ -53,10 +53,16 @@ export default {
   setup(props) {
     const showModal = toRef(props, "show");
 
+    const getScrollbarWidth = () => {
+      return window.innerWidth - document.documentElement.clientWidth;
+    };
+
     const lockedDocument = () => {
       if (showModal.value) {
+        document.body.style.paddingRight = `${getScrollbarWidth()}px`;
         document.documentElement.classList.add("modal_is-locked");
       } else {
+        document.body.style.paddingRight = "0";
         document.documentElement.classList.remove("modal_is-locked");
       }
     };
