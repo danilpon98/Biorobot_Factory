@@ -1,6 +1,6 @@
 <template>
   <v-section class="overflow-hidden" :number="3" title="Рынок комплектующих">
-    <div class="row gx-5 gy-5 justify-content-center">
+    <div class="row gx-5 gy-1 justify-content-center">
       <div class="col-sm-6 col-lg-4" v-for="part in parts" :key="part.id">
         <v-card-part
           :name="part.name"

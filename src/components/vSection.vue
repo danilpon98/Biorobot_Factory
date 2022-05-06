@@ -53,10 +53,10 @@ export default {
     margin-top: 80px;
   }
   @include media-breakpoint-down(md) {
-    margin-top: 70px;
+    margin-top: 75px;
   }
   @include media-breakpoint-down(sm) {
-    margin-top: 60px;
+    margin-top: 70px;
   }
   &__number,
   &__scroll {
