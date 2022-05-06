@@ -1,5 +1,6 @@
 ###### *Тестовое задание*
 # Фабрика Биороботов 🤖
+[![Live Demo](https://img.shields.io/badge/project-demo-brightgreen)](https://danilpon98.github.io/Biorobot_Factory/)
 
 
 ## Project setup
