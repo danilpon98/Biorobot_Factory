@@ -5,7 +5,7 @@
     <app-wallet-section />
     <app-market-section />
     <app-warehouse-section />
-    <app-production-section />
+    <app-production-section id="production" />
   </div>
   <app-message />
 </template>

@@ -1,14 +1,18 @@
 <template>
   <header class="header">
     <img src="img/logo.svg" class="logo" alt="Biorobots logo" />
-    <v-button class="header__btn" type="accent-border"
-      >Произвести биоробота</v-button
-    >
+    <v-button
+      class="header__btn"
+      type="accent-border"
+      v-scroll-to="'#production'"
+      >Произвести биоробота
+    </v-button>
   </header>
 </template>
 
 <script>
 import VButton from "@/components/vButton";
+
 export default {
   name: "AppHeader",
   components: { VButton },
@@ -24,12 +28,14 @@ export default {
   @include media-breakpoint-down(md) {
     margin-top: 24px;
   }
+
   &__btn {
     @media (max-width: 360px) {
       width: 100%;
     }
   }
 }
+
 .logo {
   display: inline-block;
   width: 78px;
