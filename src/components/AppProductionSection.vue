@@ -167,6 +167,16 @@ export default {
       }
     );
 
+    watch(robot, (newRobot) => {
+      Object.keys(selectedParts).forEach((partId) => {
+        let diffCount =
+          newRobot.requirements[partId] - getPartCount(selectedParts[partId]);
+        if (diffCount >= 0) return;
+        selectedParts[partId].sort((a, b) => parseInt(a) - parseInt(b));
+        selectedParts[partId].splice(diffCount, -diffCount);
+      });
+    });
+
     const missingPartsString = computed(() => {
       let missing = missingParts.value.reduce((accum, part, count) => {
         const isLast = count === missingParts.value.length - 1;
@@ -198,7 +208,7 @@ export default {
         const partCount = robot.value.requirements[partId];
         const partCountSelect = getPartCount(selectedParts[partId]);
         const diffCount = partCount - partCountSelect;
-        if (diffCount === 0) return accum;
+        if (diffCount <= 0) return accum;
         accum.push({ id: partId, missing: diffCount });
         return accum;
       }, []);

@@ -8,7 +8,7 @@ export default {
         plural: "биоруки,биоруки,биорук",
         purchasePrice: 7,
         salePrice: 5,
-        availability: 2,
+        availability: 5,
       },
       {
         id: "microchip",
@@ -16,7 +16,7 @@ export default {
         plural: "микрочипа,микрочипа,микрочипов",
         purchasePrice: 5,
         salePrice: 3,
-        availability: 3,
+        availability: 5,
       },
       {
         id: "soul",
@@ -24,7 +24,7 @@ export default {
         plural: "души,души,душь",
         purchasePrice: 25,
         salePrice: 15,
-        availability: 0,
+        availability: 5,
       },
     ],
   },
