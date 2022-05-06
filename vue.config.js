@@ -96,6 +96,8 @@ const configSVGIcon = function (config) {
 
 module.exports = defineConfig({
   transpileDependencies: true,
+  publicPath:
+    process.env.NODE_ENV === "production" ? "/Biorobot_Factory/" : "/",
   css: {
     loaderOptions: {
       sass: {
