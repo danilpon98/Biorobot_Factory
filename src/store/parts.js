@@ -48,17 +48,17 @@ export default {
     },
   },
   actions: {
-    buy({ commit, getters, rootGetters }, id) {
+    buy({ commit, getters, rootGetters, dispatch }, id) {
       const coins = rootGetters["coins/all"];
       const part = { ...getters.one(id) };
-      commit("coins/setCoins", coins - part.purchasePrice, { root: true });
+      dispatch("coins/update", coins - part.purchasePrice, { root: true });
       part.availability++;
       commit("update", part);
     },
-    sell({ commit, getters, rootGetters }, id) {
+    sell({ commit, getters, rootGetters, dispatch }, id) {
       const coins = rootGetters["coins/all"];
       const part = { ...getters.one(id) };
-      commit("coins/setCoins", coins + part.salePrice, { root: true });
+      dispatch("coins/update", coins + part.salePrice, { root: true });
       part.availability--;
       commit("update", part);
     },
