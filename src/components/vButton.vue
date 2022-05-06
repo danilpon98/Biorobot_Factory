@@ -115,7 +115,6 @@ export default {
   &_primary {
     font-weight: 500;
     background: $primary;
-    outline-offset: -2px;
     transition: all 0.2s;
     &::after {
       border: 2px solid transparent;
@@ -140,14 +139,13 @@ export default {
       box-shadow: 0 0 20px 0 rgba($primary, 0.35);
     }
     &:active {
-      outline: 2px solid $primary-dark;
+      box-shadow: 0 0 0 2px $primary-dark inset;
       background: transparent;
       color: $primary;
-      box-shadow: none;
     }
     &:disabled {
       color: $btn-disabled-bg;
-      outline: 2px solid $btn-disabled-bg;
+      box-shadow: 0 0 0 2px $btn-disabled-bg inset;
       background: transparent;
       transition: background 0s;
     }
