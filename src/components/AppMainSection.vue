@@ -10,7 +10,7 @@
       <div class="col-sm-6 col-md-5 order-first order-sm-last">
         <img
           class="img-responsive"
-          src="/img/main-image.png"
+          src="img/main-image.png"
           alt="Фабрика по производству биороботов"
         />
       </div>
