@@ -66,7 +66,7 @@ export default {
     border-color: rgba($accent, 0.5);
   }
   &__input:disabled + &__icon :deep(svg) {
-    opacity: 0.5;
+    fill: $checkbox-disabled-icon;
   }
   &__input:disabled ~ &__label {
     color: $text-grey;
