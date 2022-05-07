@@ -73,7 +73,7 @@ export default {
       const robot = getters.oneById(id);
       const coins = rootGetters["coins/all"];
       commit("addToManufactured", id);
-      commit("coins/setCoins", coins - robot.price, { root: true });
+      dispatch("coins/setCoins", coins - robot.price, { root: true });
       dispatch(
         "messages/add",
         {
